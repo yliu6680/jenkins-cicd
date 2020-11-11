@@ -11,10 +11,10 @@
 spring:
   application:
     name: notebook-service
-  zipkin:
-    base-url: http://zipkin-server:9411
-  mvc:
-    static-path-pattern: /**
+  # zipkin:
+  #   base-url: http://zipkin-server:9411
+  # mvc:
+  #   static-path-pattern: /**
 
 endpoints:
   restart:
@@ -25,12 +25,12 @@ endpoints:
     sensitive: false
 
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone:  ${DISCOVERY_URL:http://eureka-server:8761}/eureka/
-  instance:
-    prefer-ip-address: true
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone:  ${DISCOVERY_URL:http://eureka-server:8761}/eureka/
+#   instance:
+#     prefer-ip-address: true
 server:
   port: 1111
 
@@ -46,7 +46,7 @@ management:
     web:
       exposure:
         include: info, health, routes
-ribbon:
-  eureka:
-    enabled: true
+# ribbon:
+#   eureka:
+#     enabled: true
 
