@@ -64,21 +64,21 @@ public class ApplicationTests {
 		Assert.assertEquals(TEST_EMAIL, newNotebook.getEmail());
 	}
 
-	// @Test
-	// public void listPageChromeUItest() throws InterruptedException {
-	// 	WebDriver driver = new ChromeDriver();
-	// 	WebDriverWait wait = new WebDriverWait(driver, 10);
-	// 	try {
-	// 		String serverUrl = HTTP_LOCALHOST +port+ PATH_LIST;
-	// 		driver.get(serverUrl);
-	// 		driver.findElement(By.id(SIGNUP_BTN_ID)).sendKeys(Keys.ENTER);
-	// 		WebElement firstResult = wait.until(pre。senceOfElementLocated(By.cssSelector(ADD_NOTE_BTN_ID)));
-	// 		String acturalBtnValue = firstResult.getAttribute(VALUE_BTN_KEY);
-	// 		System.out.println(acturalBtnValue);
-	// 		Assert.assertEquals(ADD_NOTE_BTN_VALUE, acturalBtnValue);
-	// 	} finally {
-	// 		driver.quit();
-	// 	}
-	// }
+	 @Test
+	 public void listPageChromeUItest() throws InterruptedException {
+	 	WebDriver driver = new ChromeDriver();
+	 	WebDriverWait wait = new WebDriverWait(driver, 10);
+	 	try {
+	 		String serverUrl = HTTP_LOCALHOST +port+ PATH_LIST;
+	 		driver.get(serverUrl);
+	 		driver.findElement(By.id(SIGNUP_BTN_ID)).sendKeys(Keys.ENTER);
+	 		WebElement firstResult = wait.until(presenceOfElementLocated(By.cssSelector(ADD_NOTE_BTN_ID)));
+	 		String acturalBtnValue = firstResult.getAttribute(VALUE_BTN_KEY);
+	 		System.out.println(acturalBtnValue);
+	 		Assert.assertEquals(ADD_NOTE_BTN_VALUE, acturalBtnValue);
+	 	} finally {
+	 		driver.quit();
+	 	}
+	 }
 
 }
