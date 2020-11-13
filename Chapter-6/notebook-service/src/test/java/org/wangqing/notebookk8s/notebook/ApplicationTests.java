@@ -66,15 +66,21 @@ public class ApplicationTests {
 
 	 @Test
 	 public void listPageChromeUItest() throws InterruptedException {
-	 	WebDriver driver = new ChromeDriver();
+	 	// 启动一个新的driver
+		WebDriver driver = new ChromeDriver();
 	 	WebDriverWait wait = new WebDriverWait(driver, 10);
 	 	try {
+	 		// 测试的url
 	 		String serverUrl = HTTP_LOCALHOST +port+ PATH_LIST;
+	 		// 通过element的id，driver 寻找页面元素，并且点击这个ui元素，在这里也就是点击按钮
 	 		driver.get(serverUrl);
 	 		driver.findElement(By.id(SIGNUP_BTN_ID)).sendKeys(Keys.ENTER);
+			// driver等待addNote的见面，并且再次通过class的名称，选择下一个元素
 	 		WebElement firstResult = wait.until(presenceOfElementLocated(By.cssSelector(ADD_NOTE_BTN_ID)));
+	 		// 选择value属性，也就是Add Note
 	 		String acturalBtnValue = firstResult.getAttribute(VALUE_BTN_KEY);
 	 		System.out.println(acturalBtnValue);
+	 		// 通过断言比较结果，进行测试
 	 		Assert.assertEquals(ADD_NOTE_BTN_VALUE, acturalBtnValue);
 	 	} finally {
 	 		driver.quit();
