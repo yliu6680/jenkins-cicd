@@ -28,7 +28,7 @@ endpoints:
 eureka:
   client:
     serviceUrl:
-      defaultZone:  ${DISCOVERY_URL:http://eureka-server:8761}/eureka/
+      defaultZone:  ${DISCOVERY_URL:http://18.218.151.231:8761}/eureka/
   instance:
     prefer-ip-address: true
 server:

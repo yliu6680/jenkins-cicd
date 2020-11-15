@@ -16,7 +16,7 @@ eureka:
   numberRegistrySyncRetries: 1
   instance:
     preferIpAddress: false
-    hostname: eureka-server
+    hostname: 18.218.151.231
   client:
     registerWithEureka: false
     fetchRegistry: false
